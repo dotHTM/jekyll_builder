@@ -1,0 +1,17 @@
+FROM node
+
+RUN apt-get update && apt-get upgrade -y 
+
+RUN npm install -g grunt grunt-cli
+
+RUN apt-get install -y ruby ruby-dev
+
+#SASS 3.5 has a bug with Docker, using 3.4 instead.
+RUN gem install --no-rdoc --no-ri sass -v 3.4.22
+RUN gem install --no-rdoc --no-ri compass
+RUN gem install susy
+
+ADD ./config /app/config
+
+ADD entry_grunt.sh /
+CMD /entry_grunt.sh

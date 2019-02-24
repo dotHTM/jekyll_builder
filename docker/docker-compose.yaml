@@ -1,0 +1,30 @@
+version: '3'
+services:
+  jekyll:
+    build: 
+      context: ./
+      dockerfile: jekyll.docker
+    ports:
+      - "4000:4000"
+    volumes:
+      - "../static_src:/app/static_src"
+      
+  grunt:
+    build: 
+      context: ./
+      dockerfile: grunt.docker
+    ports:
+      - "35729:35729"
+    volumes:
+      - "../static_src:/app/static_src"
+  
+  apache:
+    build:
+      context: ./
+      dockerfile: apache.docker
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "../static_src/_site/:/var/www/html/"
+
