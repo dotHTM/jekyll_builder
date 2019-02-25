@@ -17,6 +17,9 @@ build: log/build.log
 up: build
 	${dc} up -d
 
+logs:
+	${dc} logs -f
+
 down:
 	${dc} down 
 
