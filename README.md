@@ -10,7 +10,7 @@ Docker containers to build, process, and preview work in Jekyll
 
 # To use
 
-This project requires [Docker](https://docker.com).
+This project requires [Docker and docker-compose](https://docker.com).
 
 1. clone to your local
 2. link or copy your jekyll source to ./static_src
