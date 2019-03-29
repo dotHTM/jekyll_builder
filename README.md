@@ -2,6 +2,12 @@
 
 Docker containers to build, process, and preview work in Jekyll
 
+# What you get out of this
+
+1. Jekyll container in build & watch mode.
+2. Grunt container for SASS and livereload.
+3. Apache container to preview what it'll look like.
+
 # To use
 
 This project requires [Docker](https://docker.com).
