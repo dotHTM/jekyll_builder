@@ -5,7 +5,11 @@ docker_files=${wildcard docker/*}
 dc=docker-compose -f "${compose_file}"
 
 default:
+	${MAKE} down up
+
+help:
 	@echo "blog!"
+
 
 
 log/build.log: ${docker_files}
